@@ -8,12 +8,15 @@ namespace Leetcode.L1647
 
             if(s is null || s =="")
             {
-                return 0;
+                return -1;
             }
 
             foreach (var c in s)
             {
-                d[c]+=1;
+                if (d.ContainsKey(c))
+                    d[c]++;
+                else
+                    d.Add(c, 1);
             }
 
             foreach (var item in d)
